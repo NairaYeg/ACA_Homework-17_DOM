@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container, .text-input {
+    text-align: center;
+}
+
+.text-input {
+    padding: 10px 21px;
+    border: none;
+    background: #eee;
+    border-radius: 10px;
+}
+
+.input-body-wrapper {
+    overflow: hidden;
+    margin-top: 20px;
+    width: 400px;
+    height: 800px;
+}
