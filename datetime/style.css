@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container h3 {
+    text-align: center;
+}
+
+.datetime-hidden {
+    display: none;
+}
+
+.datetime-inline {
+    display: inline;
+}
