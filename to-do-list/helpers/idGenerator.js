@@ -7,5 +7,5 @@ function idGenerator(){
     return new Date().getMilliseconds() * getRandomNumber(0, 1000);
   }
 
-export  {idGenerator as default} 
+export  {idGenerator} 
   

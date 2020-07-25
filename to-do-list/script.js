@@ -1,18 +1,5 @@
-// import {getRandomNumber} from './helpers/idGenerator.js'
-// import {idGenerator} from './helpers/idGenerator.js'
+import {idGenerator} from './helpers/idGenerator.js'
 
-
-
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max-min + 1) + min)
-  }
-  
-  
-function idGenerator(){
-    return new Date().getMilliseconds() * getRandomNumber(0, 1000);
-  }
-
-  
 const input = document.querySelector('#text-input')
 const btn = document.querySelector('#submit-btn')
 const todoBody = document.querySelector('.todo-body')
@@ -66,20 +53,22 @@ function render(state){
             listItem.style.fontSize = "14px"
         })
 
-        // listItem.addEventListener('click', (event)=>{
-        //    if(todo.id === state.todos[0].id){
-        //        state.todos[0].isComplete = !state.todos[0].isComplete 
-        //        render(state)
-        //    }else{
-        //        let prevSIbling = state.todos.filter((todo) => todo.value === listItem.previousSibling.innerText)
-        //        if(prevSIbling[0].isComplete){
-        //        state.todos = state.todos.map((item) => {todo.id === item.id ? {value: item.value, isComplete: !item.isComplete, id: item.id}:todo})
-        //         //   listItem.classList.add('task-complete')
-        //         render(state)
-        //     }
-        //         render(state);
-        //    }
-        // })
+        listItem.addEventListener("click", function (event) {
+             if(listItem === list.childNodes[0]) {
+                state.todos = state.todos.map((item) => item.id === todo.id ? {value: todo.value, isComplete: !todo.isComplete, id: todo.id}: item) 
+                render(state)
+                return;
+             }
+               
+             if(!listItem.previousSibling.hasAttribute("class","task-complete")) {
+                alert("You haven't done the previous task")
+             } else {
+                state.todos = state.todos.map((item) => item.id === todo.id ? {value: todo.value, isComplete: !todo.isComplete, id: todo.id}: item) 
+                render(state)
+                return;
+             }   
+          });
+        
   })      
     todoBody.innerText = ''
     todoBody.append(list)
