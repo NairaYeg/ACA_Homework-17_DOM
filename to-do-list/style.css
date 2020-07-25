@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    gap: 20px;
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+ }
+
+.todo-hover {
+    font-size: 20px;
+    color: #cccccc;
+}
+
+.task-complete {
+    font-style: italic;
+    text-decoration: line-through;
+}
