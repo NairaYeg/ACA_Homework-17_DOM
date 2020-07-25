@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
