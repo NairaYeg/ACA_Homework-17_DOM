@@ -1,19 +1,14 @@
 import {idGenerator} from './helpers/idGenerator.js'
+import {state} from './helpers/constants.js'
 
 const input = document.querySelector('#text-input')
 const btn = document.querySelector('#submit-btn')
 const todoBody = document.querySelector('.todo-body')
 
-const state = {
-    inputValue: "",
-    todos: []
-}
-
 input.addEventListener("input", (event)=>{
     state.inputValue = event.target.value
 
 })
-
 
 btn.addEventListener("click", (event)=>{
     event.preventDefault()
@@ -27,7 +22,6 @@ btn.addEventListener("click", (event)=>{
     input.value = ''
     render(state)
 })
-
 
 function render(state){
     let list = document.createElement('ol')

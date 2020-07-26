@@ -9,6 +9,10 @@ table {
     border-collapse: collapse;
 }
 
+thead {
+    background-color: #CCCCCC;
+}
+
 tr:nth-child(even) {
     background-color: #dddddd;
 
@@ -31,4 +35,8 @@ tbody td {
 #grade {
     position: relative;
     left: 0;
+}
+
+tfoot {
+    text-align: center;
 }
