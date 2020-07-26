@@ -2,13 +2,33 @@ body {
     display: flex;
     justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-  }
+}
 
 table {
+    border: 1px solid black;
     border-collapse: collapse;
-    width: 100%;
-  }
+}
 
 tr:nth-child(even) {
     background-color: #dddddd;
-  }
+
+}
+
+tbody td {
+    text-align: center;
+    padding: 10px;
+}
+
+#title {
+    text-align: center;
+}
+
+#add-btn {
+    right: 0;
+    padding: 0 350px;
+}
+
+#grade {
+    position: relative;
+    left: 0;
+}
