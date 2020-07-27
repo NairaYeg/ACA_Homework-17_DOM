@@ -33,7 +33,7 @@ addBtn.addEventListener('click', ()=>{
 
 })
 
-ageCol.addEventListener('click', () =>{ 
+ageCol.addEventListener('click', () =>{
       removeAllRows(tbody)
       console.log(sortAge(students))
       render(sortAge(students))
