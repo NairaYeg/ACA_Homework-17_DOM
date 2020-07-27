@@ -18,6 +18,10 @@ body {
 .input-body-wrapper {
     overflow: hidden;
     margin-top: 20px;
-    width: 400px;
+    width: 500px;
     height: 800px;
+}
+
+.input-body {
+    word-wrap:break-word;
 }
