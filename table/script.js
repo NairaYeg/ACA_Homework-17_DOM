@@ -16,7 +16,8 @@ const tbody = document.querySelector('#tbody')
 const sortIcon = ageCol.querySelector(".sort-icon");
 
 const render = (students) =>{
-    students.forEach((student) => {
+    let [first, ...rest] = students // slice first element of students , students[0] === {order: sortingOrders.random}
+    rest.forEach((student) => {
         addTableRow(student)
     });
 }
@@ -45,8 +46,20 @@ addBtn.addEventListener('click', ()=>{
     render(students)
 })
 
-ageCol.addEventListener('click', () =>{
-      removeAllRows(tbody)
-      console.log(sortAge(students))
-      render(sortAge(students))
+ageCol.addEventListener('click', (event) =>{
+    switch (students[0].order) {
+        case sortingOrders.random:
+            students[0].order = sortingOrders.asc;
+          break;
+        case sortingOrders.asc:
+            students[0].order = sortingOrders.desc;
+          break;
+        case sortingOrders.desc:
+            students[0].order = sortingOrders.random;
+          break;
+        default:
+          throw new Error(`${students[0].order} is not an valid order!`);
+    }
+    removeAllRows(tbody)
+    render(sortAge(students, students[0].order))
 })

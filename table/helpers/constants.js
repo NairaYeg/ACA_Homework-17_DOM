@@ -4,7 +4,7 @@ const sortingOrders= {
     desc: "desc",
   };
 
-const students = []
+const students = [{order: sortingOrders.random}]
 
   export {sortingOrders}
   export {students}

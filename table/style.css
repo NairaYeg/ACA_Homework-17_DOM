@@ -40,3 +40,11 @@ tbody td {
 tfoot {
     text-align: center;
 }
+
+.sort-icons #random {
+    display: none;
+}
+
+#ageCol {
+    cursor: pointer;
+}
