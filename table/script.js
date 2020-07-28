@@ -4,7 +4,7 @@ import {sortingOrders, students} from './helpers/constants.js'
 import {sortAge} from './helpers/sort.js'
 import {addTableRow} from './helpers/addTableRow.js'
 
-
+const body = document.querySelector('body')
 const table = document.querySelector('#table')
 const fname = document.querySelector('#fname')
 const lname = document.querySelector('#lname')
@@ -21,6 +21,19 @@ const render = (students) =>{
     });
 }
 
+body.addEventListener('keypress', (event)=>{
+    if(event.key === 'Enter'){
+        removeAllRows(tbody)
+        normalize(fname.value, lname.value, age, grade)
+        students.push({fname: `${fname.value}`, lname: `${lname.value}`, age: `${age.value}`, grade: `${grade.value}`})
+        fname.value = ''
+        lname.value = ''
+        age.value = ''
+        grade.value = ''
+        render(students)
+    }
+})
+
 addBtn.addEventListener('click', ()=>{
     removeAllRows(tbody)
     normalize(fname.value, lname.value, age, grade)
@@ -30,7 +43,6 @@ addBtn.addEventListener('click', ()=>{
     age.value = ''
     grade.value = ''
     render(students)
-
 })
 
 ageCol.addEventListener('click', () =>{
