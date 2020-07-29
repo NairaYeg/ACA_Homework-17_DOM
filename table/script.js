@@ -68,3 +68,5 @@ ageCol.addEventListener('click', (event) =>{
     removeAllRows(tbody)
     render(sortAge(students, students[0].order))
 })
+
+export {render}
