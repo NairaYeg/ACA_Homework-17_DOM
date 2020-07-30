@@ -10,7 +10,7 @@ let datetime = {
   date: getDate()
 }
 
-function render(datetime){
+const render = (datetime) =>{
   calendar.classList.toggle("datetime-inline")
   clock.classList.toggle("datetime-inline")
   calendar.append(datetime.date)
