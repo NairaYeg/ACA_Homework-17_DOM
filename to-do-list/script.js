@@ -53,9 +53,9 @@ function render(state){
                 render(state)
                 return;
              }
-               
-             if(!listItem.previousSibling.hasAttribute("class","task-complete") && !listItem.hasAttribute("class","task-complete")) {
-                alert("You haven't done the previous task")
+              const previousNotDone = !listItem.previousSibling.hasAttribute("class","task-complete") && !listItem.hasAttribute("class","task-complete")
+             if(previousNotDone) {
+                 alert("You haven't done the previous task")
              } else {
                 state.todos = state.todos.map((item) => item.id === todo.id ? {value: todo.value, isComplete: !todo.isComplete, id: todo.id}: item) 
                 render(state)
