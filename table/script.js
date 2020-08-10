@@ -2,7 +2,7 @@ import {normalize} from './helpers/normalize.js'
 import {removeAllRows} from './helpers/removeAllRows.js'
 import {sortingOrders, students} from './helpers/constants.js'
 import {sortAge} from './helpers/sort.js'
-import {addTableRow} from './helpers/addTableRow.js'
+import {createTableRow} from './helpers/createTableRow.js'
 
 const body = document.querySelector('body')
 const table = document.querySelector('#table')
@@ -19,7 +19,7 @@ const sortIcon = document.querySelector("#sort-icon");
 const render = (students) =>{
     let [first, ...rest] = students // slice first element of students , students[0] === {order: sortingOrders.random}
     rest.forEach((student) => {
-        addTableRow(student)
+        createTableRow(student)
     });
 }
 
